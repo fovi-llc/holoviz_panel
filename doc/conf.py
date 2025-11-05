@@ -115,8 +115,8 @@ myst_enable_extensions = ["colon_fence", "deflist"]
 
 gallery_endpoint = 'panel-gallery-dev' if is_dev else 'panel-gallery'
 gallery_url = f'https://{gallery_endpoint}.holoviz-demo.anaconda.com'
-jlite_url = 'https://holoviz-dev.github.io/panelite-dev/lab' if is_dev else 'https://panelite.holoviz.org/lab'
-pyodide_url = 'https://holoviz-dev.github.io/panel/pyodide' if is_dev else 'https://panel.holoviz.org/pyodide'
+jlite_url = 'https://fovi-llc.github.io/panelite-dev/lab' if is_dev else 'https://wiki3.ai/lab'
+pyodide_url = 'https://fovi-llc.github.io/panel/pyodide' if is_dev else 'https://wiki3.ai/pyodide'
 
 rediraffe_redirects = {
     # Removal of the developer testing page

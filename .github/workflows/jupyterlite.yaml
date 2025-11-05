@@ -65,18 +65,16 @@ jobs:
           (github.event_name == 'workflow_run' && (contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: holoviz-dev/panelite-dev
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./lite/dist
-          force_orphan: true
+          destination_dir: dev
+          force_orphan: false
       - name: Upload prod
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
           (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: holoviz-dev/panelite
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./lite/dist
-          cname: panelite.holoviz.org
-          force_orphan: true
+          force_orphan: false
